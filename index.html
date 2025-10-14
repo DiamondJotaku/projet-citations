@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><title>Générateur de citations</title></head>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de citations</title>
+</head>
 <body>
-<h1>✨ Générateur de citations ✨</h1>
-<p id="citation"></p>
-<button onclick="nouvelleCitation()">Nouvelle citation</button>
-<p id="maaa">Test 1 2 1 2</p>
-<script type="module" src="./src/app-browser.js"></script>
-<script>
-function nouvelleCitation() {
-  document.getElementById("maaa").innerText = window.citationAleatoire();
-}
-nouvelleCitation();
-</script>
-</body></html>
+  <h1>Générateur de citations</h1>
+  <p id="citation"></p>
+
+  <script type="module" src="./src/app-browser.js"></script>
+    <script>
+    document.getElementById("citation").innerText = window.citationAleatoire();
+    </script>
+
+</body>
+</html>
