@@ -32,7 +32,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-  
+
+      - name: Generate index.html
+        run: |
+          echo '<!DOCTYPE html>' > index.html
+          echo '<html lang="fr">' >> index.html
+          echo '<head><meta charset="UTF-8"><title>Générateur de citations</title></head>' >> index.html
+          echo '<body>' >> index.html
+          echo '<h1>✨ Générateur de citations ✨</h1>' >> index.html
+          echo '<p id="citation"></p>' >> index.html
+          echo '<script>' >> index.html
+          echo 'const citations = ["Le succès est la somme de petits efforts répétés jour après jour.","Apprendre sans réfléchir est vain. Réfléchir sans apprendre est dangereux.","La simplicité est la sophistication suprême.","La meilleure façon de prédire l’avenir, c’est de le créer."];' >> index.html
+          echo 'function citationAleatoire() { const index = Math.floor(Math.random() * citations.length); document.getElementById("citation").innerText = citations[index]; }' >> index.html
+          echo 'citationAleatoire();' >> index.html
+          echo '</script>' >> index.html
+          echo '</body></html>' >> index.html
+
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
