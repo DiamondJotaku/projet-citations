@@ -38,13 +38,17 @@ jobs:
       - name: Generate dynamic index.html
         run: |
           echo '<!DOCTYPE html>' > index.html
-          echo '<html lang="fr"><head><meta charset="UTF-8"><title>TP Node.js CI/CD</title></head>' >> index.html
+          echo '<html lang="fr"><head><meta charset="UTF-8"><title>Générateur de citations</title></head>' >> index.html
           echo '<body>' >> index.html
-          echo '<h1>Générateur de citations ✨</h1>' >> index.html
+          echo '<h1>✨ Générateur de citations ✨</h1>' >> index.html
           echo '<p id="citation"></p>' >> index.html
+          echo '<button onclick="afficherNouvelleCitation()">Nouvelle citation</button>' >> index.html
           echo '<script type="module">' >> index.html
           echo 'import citationAleatoire from "./src/app.js";' >> index.html
-          echo 'document.getElementById("citation").innerText = citationAleatoire();' >> index.html
+          echo 'function afficherNouvelleCitation() {' >> index.html
+          echo '  document.getElementById("citation").innerText = citationAleatoire();' >> index.html
+          echo '}' >> index.html
+          echo 'afficherNouvelleCitation();' >> index.html
           echo '</script>' >> index.html
           echo '</body></html>' >> index.html
     
