@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><title>TP Node.js CI/CD</title></head>
+<html lang="fr"><head><meta charset="UTF-8"><title>Générateur de citations</title></head>
 <body>
 <h1>✨ Générateur de citations ✨</h1>
 <p id="citation"></p>
+<button onclick="nouvelleCitation()">Nouvelle citation</button>
 <script type="module" src="./src/app-browser.js"></script>
-<script>document.getElementById("citation").innerText = window.citationAleatoire();</script>
+<script>
+function nouvelleCitation() {
+  document.getElementById("citation").innerText = window.citationAleatoire();
+}
+nouvelleCitation();
+</script>
 </body></html>
