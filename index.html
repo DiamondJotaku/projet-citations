@@ -2,16 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Générateur de citations</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    button { margin-top: 20px; padding: 10px 20px; }
+  </style>
 </head>
 <body>
   <h1>✨ Générateur de citations ✨</h1>
   <p id="citation"></p>
+  <button onclick="nouvelleCitation()">Nouvelle citation</button>
 
-  <script type="module">
-    import citationAleatoire from './src/app.js';
-    document.getElementById('citation').innerText = citationAleatoire();
+  <script>
+    // Tableau de citations
+    const citations = [
+      "Le succès est la somme de petits efforts répétés jour après jour.",
+      "Apprendre sans réfléchir est vain. Réfléchir sans apprendre est dangereux.",
+      "La simplicité est la sophistication suprême.",
+      "La meilleure façon de prédire l’avenir, c’est de le créer."
+    ];
+
+    // Fonction aléatoire
+    function citationAleatoire() {
+      const index = Math.floor(Math.random() * citations.length);
+      return citations[index];
+    }
+
+    // Affiche une nouvelle citation
+    function nouvelleCitation() {
+      document.getElementById("citation").innerText = citationAleatoire();
+    }
+
+    // Affichage initial
+    nouvelleCitation();
   </script>
 </body>
 </html>
