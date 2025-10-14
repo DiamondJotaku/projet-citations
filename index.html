@@ -11,7 +11,6 @@
 <body>
   <h1>✨ Générateur de citations ✨</h1>
   <p id="citation"></p>
-  <button onclick="nouvelleCitation()">Nouvelle citation</button>
 
   <script>
     // Tableau de citations
@@ -28,13 +27,7 @@
       return citations[index];
     }
 
-    // Affiche une nouvelle citation
-    function nouvelleCitation() {
-      document.getElementById("citation").innerText = citationAleatoire();
-    }
-
-    // Affichage initial
-    nouvelleCitation();
+    citationAleatoire();
   </script>
 </body>
 </html>
