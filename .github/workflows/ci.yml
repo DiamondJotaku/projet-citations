@@ -41,11 +41,11 @@ jobs:
           echo '<h1>✨ Générateur de citations ✨</h1>' >> index.html
           echo '<p id="citation"></p>' >> index.html
           echo '<button onclick="nouvelleCitation()">Nouvelle citation</button>' >> index.html
-          echo '<p>Test 1 2 1 2</p>' >> index.html
+          echo '<p id="maaa">Test 1 2 1 2</p>' >> index.html
           echo '<script type="module" src="./src/app-browser.js"></script>' >> index.html
           echo '<script>' >> index.html
           echo 'function nouvelleCitation() {' >> index.html
-          echo '  document.getElementById("citation").innerText = window.citationAleatoire();' >> index.html
+          echo '  document.getElementById("maaa").innerText = window.citationAleatoire();' >> index.html
           echo '}' >> index.html
           echo 'nouvelleCitation();' >> index.html
           echo '</script>' >> index.html
