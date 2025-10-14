@@ -40,10 +40,10 @@ jobs:
           echo "<!DOCTYPE html>" > index.html
           echo "<html lang='fr'><head><meta charset='UTF-8'><title>TP Node.js CI/CD</title></head>" >> index.html
           echo "<body>" >> index.html
-          echo "<h1>Bienvenue sur le TP CI/CD</h1>" >> index.html
-          echo "<p>Déploiement automatique réussi !</p>" >> index.html
-          echo "<p><strong>Date et heure :</strong> $(date +"%d/%m/%Y %H:%M:%S")</p>" >> index.html
-          echo "<p>Ce site a été généré automatiquement par GitHub Actions.</p>" >> index.html
+          echo "<h1>✨ Générateur de citations ✨</h1>" >> index.html
+          echo "<p id="citation"></p>" >> index.html
+          echo "<script type="module"> import citationAleatoire from './src/app.js';" >> index.html
+          echo "document.getElementById('citation').innerText = citationAleatoire(); </script>" >> index.html
           echo "</body></html>" >> index.html
     
       - name: Deploy to GitHub Pages
