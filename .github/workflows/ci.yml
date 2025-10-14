@@ -25,13 +25,13 @@ jobs:
       - name: Run tests
         run: npm test
 
-  deploy:
-    needs: build-and-test
+  deploy: # Job CD
+    name: Continuous Deployment
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    needs: test
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Generate dynamic index.html
@@ -44,9 +44,9 @@ jobs:
           echo "<p><strong>Date et heure :</strong> $(date +"%d/%m/%Y %H:%M:%S")</p>" >> index.html
           echo "<p>Ce site a été généré automatiquement par GitHub Actions.</p>" >> index.html
           echo "</body></html>" >> index.html
-
+    
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./
