@@ -1,4 +1,4 @@
-const citationAleatoire = require('../src/app');
+import citationAleatoire from '../src/app.js';
 
 test('La fonction retourne une citation', () => {
   const result = citationAleatoire();

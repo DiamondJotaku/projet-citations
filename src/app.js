@@ -7,14 +7,6 @@ const citations = [
 ];
 
 // Fonction de génération aléatoire
-function citationAleatoire() {
-  const index = Math.floor(Math.random() * citations.length);
-  return citations[index];
-}
-
-// Export du module
-module.exports = citationAleatoire;
-
 export default function citationAleatoire() {
   const citations = [
     "Le succès est la somme de petits efforts répétés jour après jour.",
@@ -25,3 +17,7 @@ export default function citationAleatoire() {
   const index = Math.floor(Math.random() * citations.length);
   return citations[index];
 }
+
+// Export du module
+module.exports = citationAleatoire;
+
