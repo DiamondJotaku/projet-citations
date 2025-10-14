@@ -18,8 +18,8 @@
 
     function citationAleatoire() {
       const index = Math.floor(Math.random() * citations.length);
-      return citations[index];
       document.getElementById("citation").innerText = citationAleatoire();
+      return citations[index];
     }
     citationAleatoire();
   </script>
