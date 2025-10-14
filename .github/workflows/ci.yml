@@ -7,7 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
+  test: # Job CI
+    name: Continuous Integration
     runs-on: ubuntu-latest
 
     steps:
