@@ -14,3 +14,4 @@ function citationAleatoire() {
 
 // Export du module
 module.exports = citationAleatoire;
+
