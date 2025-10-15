@@ -10,4 +10,4 @@ function citationAleatoire() {
   return citations[index];
 }
 
-module.exports = citationAleatoire;
+//module.exports = citationAleatoire;
