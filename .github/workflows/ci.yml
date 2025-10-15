@@ -25,27 +25,13 @@ jobs:
       - name: Run tests
         run: npm test
 
-  deploy:
-    name: Continuous Deployment
+deploy:
+    needs: build-and-test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Generate index.html
-        run: |
-          echo '<!DOCTYPE html>' > index.html
-          echo '<html lang="fr">' >> index.html
-          echo '<head><meta charset="UTF-8"><title>Générateur de citations</title></head>' >> index.html
-          echo '<body>' >> index.html
-          echo '<h1>✨ Générateur de citations ✨</h1>' >> index.html
-          echo '<p id="citation"></p>' >> index.html
-          echo '<script src="./src/app.js"></script>' >> index.html
-          echo '</body></html>' >> index.html
-
-
-      - name: Deploy to GitHub Pages
+      - uses: actions/checkout@v4
+      - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./docs
