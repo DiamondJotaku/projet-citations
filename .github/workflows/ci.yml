@@ -41,11 +41,7 @@ jobs:
           echo '<body>' >> index.html
           echo '<h1>✨ Générateur de citations ✨</h1>' >> index.html
           echo '<p id="citation"></p>' >> index.html
-          echo '<script>' >> index.html
-          echo 'const citations = ["Le succès est la somme de petits efforts répétés jour après jour.","Apprendre sans réfléchir est vain. Réfléchir sans apprendre est dangereux.","La simplicité est la sophistication suprême.","La meilleure façon de prédire l’avenir, c’est de le créer."];' >> index.html
-          echo 'function citationAleatoire() { const index = Math.floor(Math.random() * citations.length); document.getElementById("citation").innerText = citations[index]; }' >> index.html
-          echo 'citationAleatoire();' >> index.html
-          echo '</script>' >> index.html
+          echo '<script src="./src/app.js"></script>' >> index.html
           echo '</body></html>' >> index.html
 
 
